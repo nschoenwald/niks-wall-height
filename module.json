@@ -1,0 +1,30 @@
+{
+  "id": "niks-wall-height",
+  "title": "Nik's Wall Height",
+  "description": "<p>Gives walls a bottom and top elevation. Tokens, lights and sounds above or below a wall ignore it for vision, light, sound and movement. Works together with Foundry's native Scene Levels.</p>",
+  "url": "https://github.com/nschoenwald/niks-wall-height",
+  "manifest": "https://github.com/nschoenwald/niks-wall-height/releases/latest/download/module.json",
+  "download": "https://github.com/nschoenwald/niks-wall-height/releases/latest/download/module.zip",
+  "version": "14.0.0",
+  "authors": [
+    {
+      "name": "nikolai.sw",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/niks-wall-height.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "flags": {}
+}

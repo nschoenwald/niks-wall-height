@@ -1,0 +1,26 @@
+{
+  "NWH": {
+    "Settings": {
+      "showLabels": {
+        "Name": "Show Wall Height Labels",
+        "Hint": "Shows the height range of walls that have one on the Walls layer."
+      },
+      "labelMinLength": {
+        "Name": "Minimum Wall Length for Labels",
+        "Hint": "Walls shorter than this many grid spaces don't show a height label, unless hovered, selected or highlighted. 0 shows labels on every wall."
+      }
+    },
+    "WallConfig": {
+      "Legend": "Wall Height",
+      "Hint": "Sources and tokens outside this elevation range ignore the wall. Leave a field empty for no limit.",
+      "Bottom": "Bottom",
+      "Top": "Top",
+      "NoLimit": "No limit",
+      "LevelRange": "Levels of this wall: {ranges}.",
+      "WarnInverted": "Top is below Bottom. The height is ignored and the wall blocks at every elevation.",
+      "WarnNoOverlap": "This height range lies outside all of this wall's levels ({ranges}). The wall only blocks tokens and sources whose elevation is outside their level's range.",
+      "WarnOutside": "{field} lies outside this wall's levels ({ranges}). It only matters for tokens and sources whose elevation is outside their level's range. A wall never reaches into a level it isn't assigned to.",
+      "WarnOutsideBoth": "Bottom and Top lie outside this wall's levels ({ranges}). They only matter for tokens and sources whose elevation is outside their level's range. A wall never reaches into a level it isn't assigned to."
+    }
+  }
+}
