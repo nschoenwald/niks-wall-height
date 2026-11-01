@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 14.1.0
+
+### Added
+- **Monk's Wall Enhancement**: Walls made with Convert To Walls get the height for new walls from the wall palette, like walls you draw. Freehand walls, split walls and one-way doors work with wall heights.
+- **Monk's Little Details**: Checked to work together; no changes needed.
+
+### Improved
+- **Reliability with Other Modules**: Wall heights now always apply, even when another module changes which walls block vision or movement and libWrapper isn't installed.
+
 ## 14.0.0
 
 ### Added

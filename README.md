@@ -15,6 +15,7 @@ ceiling. This module adds the missing part: walls that are only as tall as you s
 - **Foundry VTT**: V14
 - **System**: System-agnostic
 - **Optional**: [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) is used when active
+- **Works with**: Monk's Wall Enhancement and Monk's Little Details (see [Other Modules](#working-with-other-modules))
 - **Languages**: English. All text is in `lang/en.json`, so the module can be translated.
 
 ---
@@ -102,6 +103,22 @@ wall.
   ceilings (level surfaces) are handled by core as before.
 - Other modules that compute vision through Foundry's polygon backend (for example vision and detection mode modules)
   get the wall heights automatically.
+
+### Working with Other Modules
+
+**Monk's Wall Enhancement**
+
+- **Freehand walls** and walls created by **double-click splitting** get the same height as the drawn or split wall.
+- **Convert To Walls** (Drawings controls) gives the new walls the height for new walls from the wall palette, like
+  walls you draw.
+- **Wall Scene** (Scene Configuration) walls the scene edge without a height, so the edge always blocks.
+- **One-way doors**: a token, light or sound above or below a one-way door ignores it, like any other wall.
+- **Drag points together** and **Join wall points** keep the height of the moved walls, and the labels follow.
+- With **Toggle Walls Display**, height labels show together with the walls outside the Walls layer.
+
+**Monk's Little Details**
+
+- Works without changes. Moving a token while holding the "ignore walls" key ignores every wall, whatever its height.
 
 ---
 

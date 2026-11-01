@@ -1,5 +1,6 @@
+import { registerCompatibility } from "./compat.mjs";
 import { MOD_ID } from "./constants.mjs";
-import { registerDefaults } from "./defaults.mjs";
+import { patchWallCreation, registerDefaults } from "./defaults.mjs";
 import { refreshAllLabels, refreshLabel, registerLabels } from "./labels.mjs";
 import { registerPolygonPatches } from "./polygon.mjs";
 import { registerWallConfig } from "./wall-config.mjs";
@@ -51,8 +52,16 @@ function onUpdateWall(doc, changed) {
 Hooks.once("init", () => {
   registerSettings();
   registerDefaults();
-  registerPolygonPatches();
   registerWallConfig();
   registerLabels();
+  registerCompatibility();
   Hooks.on("updateWall", onUpdateWall);
+});
+
+// Wrapped in setup, after every module's init: without libWrapper the last wrapper is the outermost, and the height
+// check must stay outside wrappers that can answer without calling the wrapped method (Monk's Wall Enhancement's
+// one-way doors). With libWrapper, WRAPPER-type wrappers always run outside MIXED ones anyway.
+Hooks.once("setup", () => {
+  registerPolygonPatches();
+  patchWallCreation();
 });

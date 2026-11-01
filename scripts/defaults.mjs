@@ -35,14 +35,20 @@ export function resetDefaultHeight() {
   return setDefaultHeight(EMPTY);
 }
 
-// New walls start from the palette's creation data; add the default height to it.
+/** The wall flags for the default height, or null when it has no limits. */
+export function getDefaultHeightFlags() {
+  const { bottom, top } = getDefaultHeight();
+  return ((bottom !== null) || (top !== null)) ? { bottom, top } : null;
+}
+
+// New walls start from the palette's creation data; replace any height in it with the default height.
 function createDragPreviewData(wrapped, ...args) {
   const data = wrapped(...args);
-  const { bottom, top } = getDefaultHeight();
+  const flags = getDefaultHeightFlags();
   if (data.flags?.[MOD_ID]) delete data.flags[MOD_ID];
-  if ((bottom !== null) || (top !== null)) {
+  if (flags) {
     data.flags ??= {};
-    data.flags[MOD_ID] = { bottom, top };
+    data.flags[MOD_ID] = flags;
   }
   return data;
 }
@@ -55,5 +61,8 @@ export function registerDefaults() {
     default: { ...EMPTY },
     onChange: () => { cached = null; }
   });
+}
+
+export function patchWallCreation() {
   wrapMethod("foundry.canvas.layers.WallsLayer.prototype._createDragPreviewData", createDragPreviewData);
 }
