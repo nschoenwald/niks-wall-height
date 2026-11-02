@@ -1,0 +1,26 @@
+{
+  "NWH": {
+    "Settings": {
+      "showLabels": {
+        "Name": "Afficher les étiquettes de hauteur des murs",
+        "Hint": "Affiche sur le calque des murs la plage de hauteur des murs qui en ont une."
+      },
+      "labelMinLength": {
+        "Name": "Longueur minimale des murs pour les étiquettes",
+        "Hint": "Les murs plus courts que ce nombre de cases n'affichent pas d'étiquette de hauteur, sauf s'ils sont survolés, sélectionnés ou mis en évidence. 0 affiche les étiquettes sur tous les murs."
+      }
+    },
+    "WallConfig": {
+      "Legend": "Hauteur du mur",
+      "Hint": "Les sources et les jetons hors de cette plage d'élévation ignorent le mur. Laissez un champ vide pour ne fixer aucune limite.",
+      "Bottom": "Bas",
+      "Top": "Haut",
+      "NoLimit": "Aucune limite",
+      "LevelRange": "Niveaux de ce mur : {ranges}.",
+      "WarnInverted": "Haut est en dessous de Bas. La hauteur est ignorée et le mur bloque à toutes les élévations.",
+      "WarnNoOverlap": "Cette plage de hauteur se trouve en dehors de tous les niveaux de ce mur ({ranges}). Le mur ne bloque que les jetons et les sources dont l'élévation est en dehors de la plage de leur niveau.",
+      "WarnOutside": "{field} se trouve en dehors des niveaux de ce mur ({ranges}). Cela ne compte que pour les jetons et les sources dont l'élévation est en dehors de la plage de leur niveau. Un mur ne s'étend jamais dans un niveau auquel il n'est pas attribué.",
+      "WarnOutsideBoth": "Bas et Haut se trouvent en dehors des niveaux de ce mur ({ranges}). Ils ne comptent que pour les jetons et les sources dont l'élévation est en dehors de la plage de leur niveau. Un mur ne s'étend jamais dans un niveau auquel il n'est pas attribué."
+    }
+  }
+}

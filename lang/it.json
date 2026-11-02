@@ -1,0 +1,26 @@
+{
+  "NWH": {
+    "Settings": {
+      "showLabels": {
+        "Name": "Mostra etichette dell'altezza dei muri",
+        "Hint": "Mostra sul livello dei muri l'intervallo di altezza dei muri che ne hanno uno."
+      },
+      "labelMinLength": {
+        "Name": "Lunghezza minima dei muri per le etichette",
+        "Hint": "I muri più corti di questo numero di caselle non mostrano l'etichetta dell'altezza, a meno che non siano sotto il cursore, selezionati o evidenziati. 0 mostra le etichette su ogni muro."
+      }
+    },
+    "WallConfig": {
+      "Legend": "Altezza del muro",
+      "Hint": "Le sorgenti e i token al di fuori di questo intervallo di elevazione ignorano il muro. Lascia un campo vuoto per nessun limite.",
+      "Bottom": "Base",
+      "Top": "Cima",
+      "NoLimit": "Nessun limite",
+      "LevelRange": "Livelli di questo muro: {ranges}.",
+      "WarnInverted": "Cima è sotto Base. L'altezza viene ignorata e il muro blocca a ogni elevazione.",
+      "WarnNoOverlap": "Questo intervallo di altezza è al di fuori di tutti i livelli di questo muro ({ranges}). Il muro blocca solo token e sorgenti la cui elevazione è al di fuori dell'intervallo del loro livello.",
+      "WarnOutside": "{field} è al di fuori dei livelli di questo muro ({ranges}). Conta solo per token e sorgenti la cui elevazione è al di fuori dell'intervallo del loro livello. Un muro non si estende mai in un livello a cui non è assegnato.",
+      "WarnOutsideBoth": "Base e Cima sono al di fuori dei livelli di questo muro ({ranges}). Contano solo per token e sorgenti la cui elevazione è al di fuori dell'intervallo del loro livello. Un muro non si estende mai in un livello a cui non è assegnato."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "NWH": {
+    "Settings": {
+      "showLabels": {
+        "Name": "Wandhöhen-Beschriftungen anzeigen",
+        "Hint": "Zeigt auf der Wände-Ebene den Höhenbereich von Wänden an, die einen haben."
+      },
+      "labelMinLength": {
+        "Name": "Mindestlänge für Beschriftungen",
+        "Hint": "Wände, die kürzer als so viele Rasterfelder sind, zeigen keine Höhenbeschriftung, außer wenn sie überfahren, ausgewählt oder hervorgehoben sind. 0 zeigt Beschriftungen an jeder Wand."
+      }
+    },
+    "WallConfig": {
+      "Legend": "Wandhöhe",
+      "Hint": "Quellen und Token außerhalb dieses Höhenbereichs ignorieren die Wand. Ein leeres Feld bedeutet keine Grenze.",
+      "Bottom": "Unten",
+      "Top": "Oben",
+      "NoLimit": "Keine Grenze",
+      "LevelRange": "Ebenen dieser Wand: {ranges}.",
+      "WarnInverted": "Oben liegt unter Unten. Die Höhe wird ignoriert und die Wand blockiert auf jeder Höhe.",
+      "WarnNoOverlap": "Dieser Höhenbereich liegt außerhalb aller Ebenen dieser Wand ({ranges}). Die Wand blockiert nur Token und Quellen, deren Höhe außerhalb des Bereichs ihrer Ebene liegt.",
+      "WarnOutside": "{field} liegt außerhalb der Ebenen dieser Wand ({ranges}). Das spielt nur für Token und Quellen eine Rolle, deren Höhe außerhalb des Bereichs ihrer Ebene liegt. Eine Wand reicht nie in eine Ebene, der sie nicht zugewiesen ist.",
+      "WarnOutsideBoth": "Unten und Oben liegen außerhalb der Ebenen dieser Wand ({ranges}). Sie spielen nur für Token und Quellen eine Rolle, deren Höhe außerhalb des Bereichs ihrer Ebene liegt. Eine Wand reicht nie in eine Ebene, der sie nicht zugewiesen ist."
+    }
+  }
+}

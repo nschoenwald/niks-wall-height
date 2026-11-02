@@ -1,0 +1,26 @@
+{
+  "NWH": {
+    "Settings": {
+      "showLabels": {
+        "Name": "Mostrar rótulos de altura das paredes",
+        "Hint": "Mostra na camada de paredes a faixa de altura das paredes que têm uma."
+      },
+      "labelMinLength": {
+        "Name": "Comprimento mínimo de parede para rótulos",
+        "Hint": "Paredes mais curtas que esta quantidade de espaços da grade não mostram rótulo de altura, a menos que estejam sob o cursor, selecionadas ou destacadas. 0 mostra rótulos em todas as paredes."
+      }
+    },
+    "WallConfig": {
+      "Legend": "Altura da parede",
+      "Hint": "Fontes e tokens fora desta faixa de elevação ignoram a parede. Deixe um campo vazio para não ter limite.",
+      "Bottom": "Base",
+      "Top": "Topo",
+      "NoLimit": "Sem limite",
+      "LevelRange": "Níveis desta parede: {ranges}.",
+      "WarnInverted": "Topo está abaixo de Base. A altura é ignorada e a parede bloqueia em qualquer elevação.",
+      "WarnNoOverlap": "Esta faixa de altura está fora de todos os níveis desta parede ({ranges}). A parede só bloqueia tokens e fontes cuja elevação está fora da faixa do seu nível.",
+      "WarnOutside": "{field} está fora dos níveis desta parede ({ranges}). Isso só importa para tokens e fontes cuja elevação está fora da faixa do seu nível. Uma parede nunca alcança um nível ao qual não está atribuída.",
+      "WarnOutsideBoth": "Base e Topo estão fora dos níveis desta parede ({ranges}). Eles só importam para tokens e fontes cuja elevação está fora da faixa do seu nível. Uma parede nunca alcança um nível ao qual não está atribuída."
+    }
+  }
+}
