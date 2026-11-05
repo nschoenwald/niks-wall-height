@@ -116,10 +116,6 @@ wall.
 - **Drag points together** and **Join wall points** keep the height of the moved walls, and the labels follow.
 - With **Toggle Walls Display**, height labels show together with the walls outside the Walls layer.
 
-**Monk's Little Details**
-
-- Works without changes. Moving a token while holding the "ignore walls" key ignores every wall, whatever its height.
-
 ---
 
 ## Languages
