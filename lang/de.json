@@ -8,6 +8,10 @@
       "labelMinLength": {
         "Name": "Mindestlänge für Beschriftungen",
         "Hint": "Wände, die kürzer als so viele Rasterfelder sind, zeigen keine Höhenbeschriftung, außer wenn sie überfahren, ausgewählt oder hervorgehoben sind. 0 zeigt Beschriftungen an jeder Wand."
+      },
+      "seeOverWalls": {
+        "Name": "Token über Wände hinweg sehen",
+        "Hint": "Ein Token sieht ein Token auf einem Vorsprung, eine große Kreatur oder einen Flieger hinter einer Wand, die höher als seine eigenen Augen ist, wenn die Linie zwischen beiden über die Oberkante der Wand führt. Wenn aus, verdeckt eine solche Wand jedes Token dahinter, wie in Foundry ohne dieses Modul. Ausschalten kann auf vollen Szenen mit vielen Wänden mit Höhe die Leistung verbessern."
       }
     },
     "WallConfig": {

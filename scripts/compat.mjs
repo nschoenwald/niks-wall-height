@@ -10,6 +10,10 @@
 //   wrapped method. The height check therefore has to wrap outside of it; see the setup hook in the entry point.
 //
 // Monk's Little Details: nothing needed. Its "move ignoring walls" key bypasses wall collision in core entirely.
+//
+// Simple Cover 5e: nothing needed. Its cover and LOS tests call the sight backend's static testCollision with
+// elevated points, which goes through the wrapped _testCollision / _testEdgeInclusion (polygon.mjs). Its own
+// "Wall Height" integration only reacts to the module id "wall-height", so it never filters a second time.
 
 import { MOD_ID } from "./constants.mjs";
 import { getDefaultHeightFlags } from "./defaults.mjs";

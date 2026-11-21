@@ -57,7 +57,7 @@ function testCollision(wrapped, ray, mode, destination, ...args) {
   try {
     return wrapped(ray, mode, destination, ...args);
   } finally {
-    delete this[DESTINATION];
+    this[DESTINATION] = undefined; // Not `delete`: this runs for every collision test
   }
 }
 

@@ -1,5 +1,6 @@
 import { registerCompatibility } from "./compat.mjs";
 import { MOD_ID } from "./constants.mjs";
+import { registerDetectionHooks, registerDetectionPatches, registerDetectionSetting } from "./detection.mjs";
 import { patchWallCreation, registerDefaults } from "./defaults.mjs";
 import { refreshAllLabels, refreshLabel, registerLabels } from "./labels.mjs";
 import { registerPolygonPatches } from "./polygon.mjs";
@@ -24,6 +25,7 @@ function registerSettings() {
       initial: 1 }),
     onChange: () => refreshAllLabels()
   });
+  registerDetectionSetting();
 }
 
 /**
@@ -55,6 +57,7 @@ Hooks.once("init", () => {
   registerWallConfig();
   registerLabels();
   registerCompatibility();
+  registerDetectionHooks();
   Hooks.on("updateWall", onUpdateWall);
 });
 
@@ -63,5 +66,6 @@ Hooks.once("init", () => {
 // one-way doors). With libWrapper, WRAPPER-type wrappers always run outside MIXED ones anyway.
 Hooks.once("setup", () => {
   registerPolygonPatches();
+  registerDetectionPatches();
   patchWallCreation();
 });

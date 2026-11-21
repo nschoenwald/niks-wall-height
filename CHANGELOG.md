@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 14.3.0
+
+### Added
+- **Seeing Tokens on Ledges**: A token can now see a token standing on a ledge, a tall creature or a flier behind a wall that is taller than its own eyes, as long as the line between the two passes over the top of the wall. Before, such a wall hid everything behind it unless the viewer's eyes were above it. The ground behind the wall stays hidden. The new world setting **See Tokens over Walls** (on by default) turns this off.
+
+### Improved
+- **Simple Cover 5e**: Checked to work together; no changes needed. Cover and line of sight from Simple Cover respect wall heights. See the README for how low walls affect cover.
+
+### Changed
+- **Performance**: Height labels are no longer created for players, who can't see them, and wall refreshes do less work.
+
 ## 14.2.1
 ### Removed
 - Removed the French, Spanish, Italian, Brazilian Portuguese, Japanese, Polish and Czech translations. They were machine-translated and never checked by a native speaker. Players who use Foundry in one of these languages now see this module in English. Translations by native speakers are welcome as an issue or pull request.

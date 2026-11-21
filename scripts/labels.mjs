@@ -5,6 +5,21 @@ import { getWallHeight } from "./heights.mjs";
 
 const LABEL = Symbol(`${MOD_ID}.label`);
 
+/**
+ * The label settings. Client settings build a new Setting document on every read, and this runs for every wall
+ * refresh. Dropped in refreshAllLabels, which both settings call when they change.
+ * @type {{show: boolean, minLength: number}|null}
+ */
+let labelSettings = null;
+
+function getLabelSettings() {
+  labelSettings ??= {
+    show: game.settings.get(MOD_ID, "showLabels"),
+    minLength: game.settings.get(MOD_ID, "labelMinLength")
+  };
+  return labelSettings;
+}
+
 function formatRange({ bottom, top }, units) {
   const unit = units ? ` ${units}` : "";
   if (bottom === -Infinity) return `≤ ${top}${unit}`;
@@ -18,15 +33,18 @@ function formatRange({ bottom, top }, units) {
  */
 function isLongEnough(wall) {
   if (wall.hover || wall.controlled || wall.layer?.highlightObjects) return true;
-  const minLength = game.settings.get(MOD_ID, "labelMinLength") * (wall.document.parent?.dimensions?.size ?? 100);
+  const minLength = getLabelSettings().minLength * (wall.document.parent?.dimensions?.size ?? 100);
   const [x0, y0, x1, y1] = wall.document.c;
   return Math.hypot(x1 - x0, y1 - y0) >= minLength;
 }
 
-/** Create, update or remove the height label of a Wall placeable. */
+/**
+ * Create, update or remove the height label of a Wall placeable. Only GMs get labels: players can't open the Walls
+ * layer. Not gated on the active layer, because Monk's Wall Enhancement can show the walls outside of it.
+ */
 export function refreshLabel(wall) {
   if (!wall || wall.destroyed) return;
-  const show = game.settings.get(MOD_ID, "showLabels") && isLongEnough(wall);
+  const show = game.user.isGM && getLabelSettings().show && isLongEnough(wall);
   const height = show ? getWallHeight(wall.document) : null;
   let label = wall[LABEL];
   if (!height) {
@@ -47,6 +65,7 @@ export function refreshLabel(wall) {
 }
 
 export function refreshAllLabels() {
+  labelSettings = null;
   for (const wall of canvas.walls?.placeables ?? []) refreshLabel(wall);
 }
 

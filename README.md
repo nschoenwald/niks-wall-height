@@ -15,7 +15,7 @@ ceiling. This module adds the missing part: walls that are only as tall as you s
 - **Foundry VTT**: V14
 - **System**: System-agnostic
 - **Optional**: [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) is used when active
-- **Works with**: Monk's Wall Enhancement and Monk's Little Details (see [Other Modules](#working-with-other-modules))
+- **Works with**: Monk's Wall Enhancement, Monk's Little Details and Simple Cover 5e (see [Other Modules](#working-with-other-modules))
 - **Languages**: English and German, see [Languages](#languages).
 
 ---
@@ -72,16 +72,21 @@ The wall height applies to everything that walls restrict: sight, light, darknes
 - **Vision**: A token sees past a wall when its eyes are above the top or below the bottom. Foundry places a token's
   eyes at half the token's height (its elevation plus half its depth), so a medium token standing on the ground does
   not see over a 1.5 m wall, but a token standing on a crate does.
-- **Seeing other tokens**: Whether a token can see another token also takes the target's elevation into account. A
-  tall or flying creature behind a low wall can be seen when the line between the two passes over the wall.
+- **Seeing other tokens**: Whether a token can see another token is checked along the line from the viewer's eyes to
+  the target, at the height where that line crosses each wall. A token standing on a ledge, a tall creature or a
+  flier behind a wall can be seen from below when the line passes over the wall's top, even though the wall blocks
+  the viewer's sight of the ground behind it. Example: a medium token on the ground 30 ft from a 10 ft cliff sees a
+  medium token on top of the cliff while that one stands within about 10 ft of the edge. The target still has to be
+  lit or within darkvision range as usual. The world setting **See Tokens over Walls** (on by default) turns this off;
+  a wall taller than the viewer's eyes then hides every token behind it.
 - **Lights, darkness and sounds**: A light, darkness source or sound above the top or below the bottom of a wall
   shines or is heard past it.
 - **Movement**: A token can move past a wall when its whole body, from its feet to its head, is above the top or
   below the bottom at the point where it crosses the wall. A token standing exactly on top of a wall passes it.
   Movement that climbs or descends is checked at the elevation where it crosses the wall.
 
-A wall is either in the way or not. The module does not work out partial sight lines, such as seeing the ground far
-behind a low wall but not right behind it.
+The visible area of the map (and the fog of war) stays flat: a token sees the ground behind a wall only when its eyes
+are above or below the wall. Tokens behind the wall can still be seen, as described above.
 
 Changing a wall's height updates vision, lighting, sound and planned movement right away.
 
@@ -116,6 +121,16 @@ wall.
 - **Drag points together** and **Join wall points** keep the height of the moved walls, and the labels follow.
 - With **Toggle Walls Display**, height labels show together with the walls outside the Walls layer.
 
+**Simple Cover 5e**
+
+- Works without changes. Cover and line of sight from Simple Cover respect wall heights.
+- Simple Cover draws its lines between the middle heights of the attacker and the target (half the token's height
+  above its elevation, less when prone). A wall only gives cover if a line crosses it below its Top. Example: two
+  Medium creatures (5 ft) on the ground draw their lines at 2.5 ft, so a wall up to 3 ft gives cover, a wall up to
+  2 ft doesn't.
+- Lines that rise or fall between creatures at different elevations are checked at the height where they cross the
+  wall, so a creature on a balcony can shoot over a low parapet.
+
 ---
 
 ## Languages
@@ -128,8 +143,12 @@ Translations into other languages by native speakers are welcome as an issue or 
 
 ## Modules by Nik
 
+### 🧩 Nik's Tweaks
+* **[Nik's Foundry Tweaks](https://github.com/nschoenwald/niks-foundry-tweaks)** – System-independent quality-of-life tweaks and the shared settings dashboard of Nik's Tweaks modules.
+
 ### 🎲 D&D 5e Specific
 * **[Nik's DnD5e Tweaks](https://github.com/nschoenwald/niks-dnd5e-tweaks)** – Consolidated collection of quality-of-life enhancements and combat automation tweaks for DnD5e.
+* **[Nik's Give & Take](https://github.com/nschoenwald/niks-give-and-take)** – Players hand items and money to other characters and the party, and take them from the party's stash.
 
 ### ⚔️ Combat & Token Tools
 * **[Nik's Action HUD](https://github.com/nschoenwald/niks-action-hud)** – Sleek, modern canvas-docked Action HUD for quick access to attacks, spells, inventory, and utility rolls.
@@ -151,3 +170,4 @@ Translations into other languages by native speakers are welcome as an issue or 
 * **[Nik's Zoom / Pan Options](https://github.com/nschoenwald/niks-zoom-pan-options)** – Touchpad and scroll wheel pan/zoom controls and canvas navigation enhancements.
 * **[Nik's Scene Transformations](https://github.com/nschoenwald/niks-scene-transformations)** – Rotate scenes or add playable space around them, with tokens, walls, lights, tiles and regions moved along so everything stays in place.
 * **[Nik's Wall Height](https://github.com/nschoenwald/niks-wall-height)** – Give walls a bottom and top elevation, so tokens, lights and sounds above or below a wall ignore it.
+* **[Nik's Scene Defaults](https://github.com/nschoenwald/niks-scene-defaults)** – Set your own defaults for new scenes (grid, vision, fog, lighting, background and more), so you don't have to change them on every scene.

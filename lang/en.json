@@ -8,6 +8,10 @@
       "labelMinLength": {
         "Name": "Minimum Wall Length for Labels",
         "Hint": "Walls shorter than this many grid spaces don't show a height label, unless hovered, selected or highlighted. 0 shows labels on every wall."
+      },
+      "seeOverWalls": {
+        "Name": "See Tokens over Walls",
+        "Hint": "A token sees a token standing on a ledge, a tall creature or a flier behind a wall taller than its own eyes when the line between the two passes over the top of the wall. When off, such a wall hides every token behind it, as in Foundry without this module. Turning it off can help performance on busy scenes with many height walls."
       }
     },
     "WallConfig": {
