@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 14.4.0
+
+- The module is now available in French, reviewed by Kameleau. Thank you!
+
 ## 14.3.0
 
 ### Added

@@ -16,7 +16,7 @@ ceiling. This module adds the missing part: walls that are only as tall as you s
 - **System**: System-agnostic
 - **Optional**: [libWrapper](https://github.com/ruipin/fvtt-lib-wrapper) is used when active
 - **Works with**: Monk's Wall Enhancement, Monk's Little Details and Simple Cover 5e (see [Other Modules](#working-with-other-modules))
-- **Languages**: English and German, see [Languages](#languages).
+- **Languages**: English, German and French, see [Languages](#languages).
 
 ---
 
@@ -135,7 +135,7 @@ wall.
 
 ## Languages
 
-🇬🇧 English · 🇩🇪 Deutsch
+🇬🇧 English · 🇩🇪 Deutsch · 🇫🇷 Français (thanks Kameleau)
 
 Translations into other languages by native speakers are welcome as an issue or pull request.
 
